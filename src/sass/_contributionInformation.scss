@@ -2,6 +2,10 @@ fieldset legend, .at-steps {
   display: none !important;
 }
 
+.form-item-selectedfrequency {
+  margin: 0 4px;
+}
+
 /**
 /* Radio Buttons (.form-item-selectedfrequency):
 /* Select One Time or Montly Payment 
@@ -121,7 +125,7 @@ fieldset legend, .at-steps {
       height: 100%;
       left: 0;
       display: block;
-      border: 1px solid #D7DADD;
+      border: 1px solid #D6D8DC;
       color: #00A3AB;
       border-radius: 8px;
       z-index: -1;
@@ -151,7 +155,7 @@ fieldset legend, .at-steps {
       min-height: 0;
       padding: 7px 10px 7px 1.5rem;
       outline: none;
-      border: 1px solid #BBB;
+      border: 1px solid #D6D8DC;
       border-radius: 4px;
       background-color: #fff;
       font-size: 24px;
@@ -178,6 +182,7 @@ fieldset legend, .at-steps {
     font-size: 0;
     padding: 0;
     flex: 1 1 50%;
+    margin-bottom: 6px;
 
     &.active input[type="number"] {
       background-color: #00A3AB;
@@ -188,7 +193,7 @@ fieldset legend, .at-steps {
     input.edit-otheramount {
       border-radius: 8px;
       padding: 16px 20px;
-      border: 1px solid #BBB;
+      border: 1px solid #D6D8DC;
       width: 100%;
       height: 100%;
       font-size: 22px;

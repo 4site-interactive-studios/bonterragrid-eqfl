@@ -1,5 +1,5 @@
 .TributeGift {
-  margin: 50px auto;
+  margin: 50px 4px;
 
   .radios {
     display: flex;
@@ -12,59 +12,13 @@
       display: flex;
       border-radius: 8px;
       padding: 16px 20px;
-      border: 1px solid #8D939E;
+      border: 1px solid #D6D8DC;
       width: 100%;
       height: 100%;
       font-size: 22px;
       box-sizing: border-box;
       background: #F8F9F9;
     }
-  }
-
-  /**
-  * Checkbox style
-  */
-
-  .at-check {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .at-check input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  .at-check .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    background-color: #FFFFFF;
-    border: 1px solid #8D939E;
-    border-radius: 6px;
-  }
-  .at-check input:checked ~ .checkmark {
-    background-color: #00A3AB;
-    border: 1px solid #00A3AB;
-  }
-  .at-check .checkmark:after {
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.6485 2.11306L5.31801 8.63755C4.84923 9.12082 4.08879 9.12082 3.61956 8.63755L0.351719 5.26908C-0.11724 4.78581 -0.11724 4.00193 0.351719 3.51856C0.820766 3.03511 1.58114 3.03511 2.04998 3.51838L4.46904 6.01177L9.94997 0.362453C10.419 -0.121001 11.1795 -0.120635 11.6483 0.362453C12.1172 0.845816 12.1172 1.62943 11.6485 2.11306Z' fill='white'/></svg>");
-    position: absolute;
-    top: -1px;
-    left: 5px;
-    display: none;
-    width: 12px;
-    height: 9px;
-  }
-  .at-check input:checked ~ .checkmark:after {
-    display: block;
   }
 
   /**
@@ -93,7 +47,7 @@
     height: 24px;
     width: 24px;
     background-color: #FFFFFF;
-    border: 1px solid #8D939E;
+    border: 1px solid #D6D8DC;
     border-radius: 50%;
   }
   label[class^="at-radio"] input:checked ~ .checkmark {
@@ -118,3 +72,49 @@
   }
 
 }
+
+/**
+  * Checkbox style
+  */
+
+  .at-check {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .at-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .at-check .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #FFFFFF;
+    border: 1px solid #D6D8DC;
+    border-radius: 6px;
+  }
+  .at-check input:checked ~ .checkmark {
+    background-color: #00A3AB;
+    border: 1px solid #00A3AB;
+  }
+  .at-check .checkmark:after {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.6485 2.11306L5.31801 8.63755C4.84923 9.12082 4.08879 9.12082 3.61956 8.63755L0.351719 5.26908C-0.11724 4.78581 -0.11724 4.00193 0.351719 3.51856C0.820766 3.03511 1.58114 3.03511 2.04998 3.51838L4.46904 6.01177L9.94997 0.362453C10.419 -0.121001 11.1795 -0.120635 11.6483 0.362453C12.1172 0.845816 12.1172 1.62943 11.6485 2.11306Z' fill='white'/></svg>");
+    position: absolute;
+    top: -1px;
+    left: 5px;
+    display: none;
+    width: 12px;
+    height: 9px;
+  }
+  .at-check input:checked ~ .checkmark:after {
+    display: block;
+  }

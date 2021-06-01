@@ -1,0 +1,45 @@
+.ContactInformation {
+
+  .at-fields {
+    .at-row {
+      display: flex;
+      margin-bottom: 8px;
+
+      label {
+        font-size: 14px;
+        flex: 1 1 auto;
+      }
+
+      label:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      label.error {
+
+        input {
+          outline: none !important;
+          background: #FFFBFC !important;
+          border: 1px solid #FCDDE9 !important;
+        }
+
+        small.error {
+          color: #EE2B77;
+        }
+      }
+
+      input, select {
+        display: flex;
+        border-radius: 8px;
+        padding: 14px 20px;
+        border: 1px solid #D6D8DC;
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+        background: #F8F9F9;
+        
+      }
+
+    }
+  }
+
+}

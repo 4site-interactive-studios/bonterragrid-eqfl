@@ -1,0 +1,17 @@
+.PaymentInformation {
+
+  label {
+    font-size: 14px;
+  }
+
+  .vgs-cc-iframe-wrapper, .vgs-ccexpiration-iframe-wrapper {
+    display: flex;
+    border-radius: 8px;
+    padding: 14px 20px;
+    border: 1px solid #D6D8DC;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #F8F9F9;
+  }
+}

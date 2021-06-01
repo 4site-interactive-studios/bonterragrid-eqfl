@@ -1,0 +1,24 @@
+.PaymentMethodSection {
+  // display: flex;
+
+  .at-radio-set-buttons input[type="radio"] {
+    display: none;
+  }
+
+  .at-credit-card-button-wrapper {
+
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+
+    .at-btn-radio {
+      background-color: #ee2b77;
+      color: #FFFFFF;
+      padding: 19px 24px;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+  }
+
+}
