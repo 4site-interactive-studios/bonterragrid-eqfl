@@ -1,6 +1,6 @@
 @import "normalize";
 @import "fonts";
-@import url("https://use.typekit.net/twy5qrj.css");
+@import url("https://use.typekit.net/fyc7sqc.css");
 
 html, 
 body {
@@ -41,7 +41,7 @@ h2 {
   }
 }
 
-.content {
+.eqfl-content {
   padding: 20px 10px;
   @media (min-width: 382px) {
     padding: 20px;
@@ -90,10 +90,10 @@ h2 {
   height: 100vh;
   display: flex;
   width: calc(100vw - 630px);
-  background: url("../images/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  // background: url("../images/bg.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center center;
 }
 
 .logo {
@@ -104,7 +104,7 @@ h2 {
 h1 {
   font-size: 54px;
   line-height: 54px;
-  font-family: "kiro";
+  font-family: "kiro", sans-serif;
   margin: 36px 4px;
 }
 
@@ -170,7 +170,7 @@ h1 {
   text-align: center;
   color: #FFFFFF;
   font-size: 24px;
-  font-family:"kiro";
+  font-family:"kiro", sans-serif;
   font-weight: 700;
   cursor: pointer;
 

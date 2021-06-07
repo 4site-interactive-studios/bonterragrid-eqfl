@@ -22,7 +22,7 @@ for (let i = 0; i < acc.length; i++) {
  * Contribution Information - Select amount
  */
 const labelAmount = document.querySelectorAll('.label-amount');
-const labelOtheramount = document.querySelector('.label-otheramount input[type="number"]');
+const labelOtheramount = document.querySelector('.edit-otheramount');
 
 const handleClick = e => {
   e.preventDefault();
