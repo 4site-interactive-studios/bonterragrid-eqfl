@@ -7,11 +7,12 @@
 
       label {
         font-size: 14px;
-        flex: 1 1 auto;
+        // flex: 1 1 auto;
+        flex: 1;
       }
 
       label:not(:last-child) {
-        margin-right: 8px;
+        margin-right: 8px !important;
       }
 
       label.error {
@@ -35,8 +36,23 @@
         width: 100%;
         font-size: 16px;
         box-sizing: border-box;
+      }
+
+      input {
         background: #F8F9F9;
-        
+        height: 48px;
+      }
+
+      select {
+        height: 48px !important;
+      }
+
+      &.PostalCode.City.StateProvince {
+        justify-content: flex-start;
+
+        label {
+          flex: 1 1 0px !important;
+        }
       }
 
     }

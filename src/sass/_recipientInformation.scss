@@ -1,8 +1,9 @@
 .RecipientInformation {
   margin-bottom: 50px;
 
-  .at-title {
-    font-size: 22px;
+  .at-recipient-info .at-title {
+    font-size: 22px !important;
+    margin: 0 !important;
   }
 
   .RecipientEmailAddress, .NotificationMessage {

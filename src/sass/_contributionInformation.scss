@@ -2,6 +2,10 @@ fieldset legend, .at-steps {
   display: none !important;
 }
 
+fieldset.ContributionInformation {
+  margin: 0 !important;
+}
+
 .form-item-selectedfrequency {
   margin: 0 4px;
 }
@@ -16,7 +20,7 @@ fieldset legend, .at-steps {
   display: flex;
   align-items: center;
   padding: 0 4px;
-  margin: 36px auto 8px auto;
+  margin: 36px auto 8px auto !important;
   font-size: 24px;
   color: #00A3AB;
   height: 70px;
@@ -32,6 +36,10 @@ fieldset legend, .at-steps {
     cursor: pointer;
     transition: color 200ms ease-out;
     z-index: 100;
+    color: inherit !important;
+    font-size: 24px !important;
+    font-family: 'caldinaregular', sans-serif !important;
+    text-shadow: none !important;
   }
 
   &__indicator {
@@ -66,11 +74,11 @@ fieldset legend, .at-steps {
   }
 
   input#id-0:checked ~ .at-radio-label-0 {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
   }
 
   input#id-1:checked ~ .at-radio-label-4 {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
   }
 
 }
@@ -104,6 +112,10 @@ fieldset legend, .at-steps {
     transition: color 0.2s ease-in-out;
   }
 
+  .label-amount:nth-child(4n+4) {
+    margin-right: 4px !important;
+  }
+
   .label-amount {
     display: flex;
     flex: 1 1 0px;
@@ -117,6 +129,8 @@ fieldset legend, .at-steps {
     position: relative;
     margin: 0 4px 8px 4px;
     font-family: 'caldinasemibold';
+    text-shadow: none !important;
+    
   
     a {
       position: absolute;
@@ -183,7 +197,7 @@ fieldset legend, .at-steps {
     font-size: 0;
     padding: 0;
     flex: 1 1 50%;
-    margin-bottom: 6px;
+    margin: 0 4px 8px 4px !important;
 
     &.active input[type="number"] {
       background-color: #00A3AB;

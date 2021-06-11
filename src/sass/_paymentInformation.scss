@@ -4,14 +4,23 @@
     font-size: 14px;
   }
 
-  .vgs-cc-iframe-wrapper, .vgs-ccexpiration-iframe-wrapper {
+  .vgs-cc-iframe-wrapper iframe, .vgs-ccexpiration-iframe-wrapper iframe {
     display: flex;
     border-radius: 8px;
-    padding: 14px 20px;
+    // padding: 14px 20px;
     border: 1px solid #D6D8DC;
     width: 100%;
     font-size: 16px;
     box-sizing: border-box;
     background: #F8F9F9;
   }
+  
+  .at-cc-number {
+    margin-right: 8px !important;
+  }
+
+  .css-kaihww {
+    background-color: #F8F9F9 !important;
+  }
+
 }

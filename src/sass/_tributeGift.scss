@@ -1,8 +1,9 @@
 .TributeGift {
-  margin: 50px 4px;
+  // margin: 50px 4px !important;
 
   .radios {
-    display: flex;
+    display: flex !important;
+    // margin: 0 auto 1rem auto !important;
   }
 
   .HonoreeName {
@@ -63,8 +64,8 @@
     display: block;
   }
   label[class^="at-radio"] .checkmark:after {
-    top: 9px;
-    left: 9px;
+    top: 8px;
+    left: 8px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
