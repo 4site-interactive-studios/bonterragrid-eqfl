@@ -1,3 +1,8 @@
+body:not(.showBody){
+  background-color: #E0F4F5 !important;
+  opacity: 0 !important;
+}
+
 @import "normalize";
 @import "fonts";
 @import url("https://use.typekit.net/fyc7sqc.css");
@@ -9,6 +14,12 @@ body {
   width: 100%;
   font-family: 'caldinaregular', sans-serif;
   font-size: 16px;
+}
+
+body.showBody {
+  background-color: #FFFFFF;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 img {
@@ -89,6 +100,11 @@ header.at-title {
   max-width: 635px;
   padding: 42px 70px;
   box-sizing: border-box;
+
+
+  img {
+    width: 422px;
+  }
 }
 
 .responsive-hero {
@@ -126,6 +142,10 @@ header.at-title {
   margin: 0 4px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "kiro", sans-serif !important;
+}
+
 h1 {
   font-size: 54px;
   line-height: 54px;
@@ -160,10 +180,10 @@ h1 {
     }
   }
   
-  .active, .accordion:hover {
-    background-color: #E0F4F5;
-    transition: background-color 0.2s ease-in-out;
-  }
+  // .accordion:hover {
+  //   background-color: #E0F4F5;
+  //   transition: background-color 0.2s ease-in-out;
+  // }
   
   .active {
     &::after {
@@ -175,7 +195,6 @@ h1 {
   
   .panel {
     padding: 0 18px;
-    background-color: #E0F4F5;
     display: none;
     overflow: hidden;
   }
@@ -218,6 +237,10 @@ h1 {
   padding: 20px;
   margin: 16px 4px 24px 4px;
 
+  p {
+    margin: 0 !important;
+  }
+
   img {
     width: 230px;
   }
@@ -228,6 +251,10 @@ h1 {
     text-align: center;
   }
 
+}
+
+.at-form-submit {
+  padding: 0 !important;
 }
 
 .at-row>[class^="at-"] {

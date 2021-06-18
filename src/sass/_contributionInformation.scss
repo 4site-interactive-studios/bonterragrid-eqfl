@@ -10,6 +10,12 @@ fieldset.ContributionInformation {
   margin: 0 4px;
 }
 
+@media only screen and (max-width: 40em) {
+  .at form .label-amount:nth-child(2n+2) {
+    margin-right: 4px !important;
+  }
+}
+
 /**
 /* Radio Buttons (.form-item-selectedfrequency):
 /* Select One Time or Montly Payment 
@@ -37,9 +43,12 @@ fieldset.ContributionInformation {
     transition: color 200ms ease-out;
     z-index: 100;
     color: inherit !important;
-    font-size: 24px !important;
     font-family: 'caldinaregular', sans-serif !important;
     text-shadow: none !important;
+    font-size: 20px !important;
+    @media (min-width: 550px) {
+      font-size: 24px !important;
+    }
   }
 
   &__indicator {
@@ -86,7 +95,10 @@ fieldset.ContributionInformation {
 .radio-description {
   display: flex;
   font-size: 16px;
+  line-height: 24px;
+  font-family: "Alkes", serif;
   font-style: italic;
+  font-weight: 400;
   margin-bottom: 36px;
   color: #00A3AB;
 
@@ -128,8 +140,12 @@ fieldset.ContributionInformation {
     text-align: center;
     position: relative;
     margin: 0 4px 8px 4px;
-    font-family: 'caldinasemibold';
+    font-family: 'caldinasemibold', sans-serif;
     text-shadow: none !important;
+
+    @media (min-width: 641px) {
+      max-width: 117px;
+    }
     
   
     a {
@@ -191,12 +207,14 @@ fieldset.ContributionInformation {
 
   // Other Amount
   .label-otheramount {
-
     position: relative;
     background-color: transparent;
     font-size: 0;
     padding: 0;
-    flex: 1 1 50%;
+    flex: auto; // flex: 1 1 50%;
+    width: 20% !important;
+    max-width: none;
+    height: 66px;
     margin: 0 4px 8px 4px !important;
 
     &.active input[type="number"] {
@@ -231,7 +249,7 @@ fieldset.ContributionInformation {
       position: absolute;
       color: #000000;
       left: 0;
-      top: 12px;
+      top: 15px;
       font-size: 15px;
       line-height: 1.42857;
       padding: 7px 0 7px 10px;
