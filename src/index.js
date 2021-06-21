@@ -13,6 +13,7 @@ window.addEventListener('load', function () {
     takeActionScroll();
     selectAmount();
     nextButton();
+    photoCredit();
 
     showBody();
 
@@ -136,6 +137,7 @@ function moveRadiosElements() {
   const radios = selectedFrequency.querySelector(".radios");
   const radioDescription = document.querySelector(".radio-description");
   const frequencyInput = selectedFrequency.querySelectorAll("label input");
+  const giveMonthly = document.querySelector(".at-radio-label-4");
 
   // Move Radio description outside radios div
   selectedFrequency.appendChild(radioDescription);
@@ -148,6 +150,8 @@ function moveRadiosElements() {
     label.setAttribute('for', 'id-' + index);
     labelParent.insertBefore(input, label);
   });
+
+  giveMonthly.textContent = "Give Monthly";
 
   // Add radios indicator div
   radios.insertAdjacentHTML('beforeend', '<div class="radios__indicator"></div>');
@@ -183,35 +187,57 @@ function checkboxRadiobutton() {
 function isViewport() {
 
   const takeAction = document.querySelector('.take-action');
-  const target = document.querySelector('.ContributionInformation .radios');
-  const config = { rootMargin: '0px', threshold: 1.0 }
 
-  let callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting || (entry.boundingClientRect.top <= 0)) {
-        takeAction.style.display = "none";
-      } else {
-        takeAction.style.display = "";
-      }
-    });
-  };
-  
-  const observer = new IntersectionObserver(callback, config);
-  observer.observe(target);
+  if (takeAction.innerHTML.trim() !== '') {
+    const target = document.querySelector('.ContributionInformation .radios');
+    const config = { rootMargin: '0px', threshold: 1.0 }
+
+    let callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting || (entry.boundingClientRect.top <= 0)) {
+          takeAction.style.display = "none";
+        } else {
+          takeAction.style.display = "";
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(callback, config);
+    observer.observe(target);
+  } else {
+    takeAction.style.display = "none";
+  }
 
 }
 
 function takeActionScroll() {
   const takeAction = document.querySelector('.take-action');
-  takeAction.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector('.ContributionInformation').scrollIntoView({
-        behavior: 'smooth'
+
+  if (takeAction.innerHTML.trim() !== '') {
+    takeAction.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('.ContributionInformation').scrollIntoView({
+          behavior: 'smooth'
+      });
     });
-  });
+  }
+
 }
 
 function nextButton() {
   const nextButton = document.querySelector(".nextStep");
   nextButton.innerHTML = 'Continue';
+}
+
+
+function photoCredit() {
+  const bgImage = document.querySelector(".bg-image");
+  const responsiveHero = document.querySelector(".responsive-hero");
+  const responsiveHeroImage = responsiveHero.querySelector("img");
+  
+  if (responsiveHeroImage.hasAttribute("title")) {
+    const photoAttribute = responsiveHeroImage.getAttribute("title");
+    bgImage.insertAdjacentHTML('beforeend', `<div class="photoCredit">${photoAttribute}</div>`);
+    responsiveHero.insertAdjacentHTML('beforeend', `<div class="photoCredit">${photoAttribute}</div>`);
+  }
 }

@@ -108,6 +108,7 @@ header.at-title {
 }
 
 .responsive-hero {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -131,10 +132,17 @@ header.at-title {
   height: 100vh;
   display: flex;
   width: calc(100vw - 630px);
-  // background: url("../images/bg.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center center;
+}
+
+.photoCredit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  font-family: 'caldinabold', sans-serif;
+  background: rgba(0, 38, 52, 0.24);
+  color: #FFFFFF;
+  padding: 8px 42px;
 }
 
 .logo {
