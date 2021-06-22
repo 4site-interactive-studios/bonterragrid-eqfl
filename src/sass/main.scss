@@ -239,11 +239,20 @@ h1 {
 }
 
 .becomeMember {
-  background-color: #f7e9a0;
+  background-color: #F2E59F; // #f7e9a0;
   border-radius: 8px;
   display: flex;
-  padding: 20px;
+  // padding: 20px;
   margin: 16px 4px 24px 4px;
+  overflow: hidden;
+
+  .becomeMember-content {
+    padding: 45px 32px 45px 24px;
+  }
+
+  h2 {
+    margin: 0 0 18px 0;
+  }
 
   p {
     margin: 0 !important;
@@ -374,3 +383,6 @@ fieldset {
 
 // Payment Information
 @import "_paymentInformation";
+
+// Buttons Colors
+@import "_buttonsColors";

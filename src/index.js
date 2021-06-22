@@ -125,7 +125,7 @@ function addBecomeMember() {
     </div>
   </div>
   `;
-  contributionInformation.insertAdjacentHTML('afterend', becomeMember);
+  contributionInformation.insertAdjacentHTML('beforeend', becomeMember);
 }
 
 /**
