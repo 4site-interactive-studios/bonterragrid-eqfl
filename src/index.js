@@ -1,35 +1,36 @@
 //import css from "./main.css";
 import scss from "./sass/main.scss";
 
-window.addEventListener('load', function () {
+window.nvtag_callbacks = window.nvtag_callbacks || {};
+var nvtag_callbacks = window.nvtag_callbacks;
+nvtag_callbacks.postRender = nvtag_callbacks.postRender || [];
+nvtag_callbacks.postRender.push(function(args) {
 
-  setTimeout( function() {
-    displayAccordion();
-    bgImage();
-    moveRadiosElements();
-    isViewport();
-    addBecomeMember();
-    checkboxRadiobutton();
-    takeActionScroll();
-    selectAmount();
-    nextButton();
-    photoCredit();
+  displayAccordion();
+  bgImage();
+  moveRadiosElements();
+  isViewport();
+  addBecomeMember();
+  checkboxRadiobutton();
+  takeActionScroll();
+  selectAmount();
+  nextButton();
+  photoCredit();
 
-    showBody();
+  showBody();
 
-    const target = document.querySelector(".form-item-selectamount");
-    const config = { attributes: false, childList: true, subtree: true };
-    
-    const callback = function(mutationsList, observer) {
-      for(const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          selectAmount();
-        }
+  const target = document.querySelector(".form-item-selectamount");
+  const config = { attributes: false, childList: true, subtree: true };
+  
+  const callback = function(mutationsList, observer) {
+    for(const mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        selectAmount();
       }
-    };
-    const observer = new MutationObserver(callback);
-    observer.observe(target, config);
-  }, 1000);
+    }
+  };
+  const observer = new MutationObserver(callback);
+  observer.observe(target, config);
 
 });
 

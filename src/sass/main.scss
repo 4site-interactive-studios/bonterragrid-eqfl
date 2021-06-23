@@ -366,6 +366,10 @@ fieldset {
   }
 }
 
+.multistep-layout .HeaderHtml {
+  padding: 0 !important;
+}
+
 // Fieldset .ContributionInformation
 @import "_contributionInformation";
 
