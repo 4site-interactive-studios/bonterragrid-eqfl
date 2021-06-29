@@ -58,6 +58,13 @@ header.at-title {
   display: flex;
 }
 
+.multistep-layout .HeaderHtml p:first-of-type {
+  padding-top: 32px;
+  @media (min-width: 641px) {
+    padding-top: 16px;
+  }
+}
+
 .content-wrap {
   display: flex;
   flex-direction: column;
@@ -66,11 +73,11 @@ header.at-title {
   font-family: 'caldinaregular';
   font-weight: 400;
   line-height: 24px;
-  z-index: 100;
+  z-index: 50;
   max-width: 640px;
   background-color: #FFFFFF;
 
-  @media (min-width: 640px) {
+  @media (min-width: 641px) {
     background-image: url("data:image/svg+xml;charset=UTF-8, <svg width='5' height='762' viewBox='0 0 5 762' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -257.058 303.476)' fill='white'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -287.804 336.15)' fill='%232DC3E9'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -318.548 368.824)' fill='%236A3A10'/><rect width='44.8646' height='528.317' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -349.293 401.498)' fill='%23402611'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -226.312 270.802)' fill='%23F490B3'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -195.567 238.129)' fill='%23EE2B77'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -164.823 205.455)' fill='%23F99D25'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -134.078 172.782)' fill='%23FFD200'/><path d='M-103.333 140.108L-72.5879 107.434L257.702 458.443L226.957 491.116L-103.333 140.108Z' fill='%2388C540'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -72.5869 107.434)' fill='%2300A3AB'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -41.8428 74.7606)' fill='%230072BC'/><rect width='44.8646' height='517.725' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -35.5967 16.0507)' fill='%23643695'/></svg>");
     background-repeat: repeat-y;
     background-position: right top;
@@ -107,6 +114,13 @@ header.at-title {
   }
 }
 
+// Hide the neverbounce feedback field
+div[id^=nb-field-] div.nb-feedback div .nb-poweredby {
+  display: none !important;
+}
+// Hide the recaptcha badge
+.grecaptcha-badge { visibility: hidden; }
+
 .responsive-hero {
   position: relative;
   display: flex;
@@ -120,7 +134,7 @@ header.at-title {
     background-position: left bottom;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 641px) {
     display: none;
   }
 }
@@ -132,6 +146,9 @@ header.at-title {
   height: 100vh;
   display: flex;
   width: calc(100vw - 630px);
+  @media (max-width: 640px) {
+    display: none;
+  }
 }
 
 .photoCredit {
@@ -218,7 +235,7 @@ h1 {
   height: auto;
   padding: 24px;
   background: #ee2b77;
-  z-index: 101;
+  z-index: 52;
   border-radius: 8px;
   text-align: center;
   color: #FFFFFF;
@@ -233,7 +250,7 @@ h1 {
     content: url("data:image/svg+xml;charset=UTF-8, <svg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2.33439 8.93812L2.3344 8.93813L7.08801 13.2918L7.08801 1.34746C7.08801 1.09859 7.30578 0.91 7.55739 0.91L8.44261 0.91C8.69421 0.91 8.91198 1.09859 8.91198 1.34746L8.91198 13.2918L13.6656 8.93813C13.8482 8.77094 14.1412 8.77095 14.3237 8.93812L14.3237 8.93813L14.9497 9.5114C15.1368 9.68276 15.1368 9.96415 14.9497 10.1355L14.9497 10.1355L8.32907 16.1991C8.14651 16.3663 7.85354 16.3663 7.67096 16.1991L7.67096 16.1991L1.05035 10.1355C0.863217 9.96416 0.863214 9.68276 1.05035 9.5114C1.05035 9.5114 1.05035 9.5114 1.05036 9.5114L1.67629 8.93813C1.85884 8.77094 2.15182 8.77095 2.33439 8.93812Z' fill='white' stroke='white' stroke-width='0.18'/></svg>");
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 641px) {
     display: none;
   }
 }
@@ -262,7 +279,7 @@ h1 {
     width: 230px;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 641px) {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;

@@ -3,10 +3,16 @@ import scss from "./sass/main.scss";
 
 window.nvtag_callbacks = window.nvtag_callbacks || {};
 var nvtag_callbacks = window.nvtag_callbacks;
+/*
+nvtag_callbacks.alterFormDefinition = nvtag_callbacks.alterFormDefinition || [];
+nvtag_callbacks.alterFormDefinition.push(function(args) {
+  return args;
+});
+*/
 nvtag_callbacks.postRender = nvtag_callbacks.postRender || [];
 nvtag_callbacks.postRender.push(function(args) {
-
   displayAccordion();
+  mobileImage();
   bgImage();
   moveRadiosElements();
   isViewport();
@@ -34,8 +40,19 @@ nvtag_callbacks.postRender.push(function(args) {
 
 });
 
+function mobileImage() {
+  let img = document.querySelector('.responsive-hero img');
+  if (img && !img.getAttribute('src')) {
+    img.style.display = 'none';
+  }
+}
+
 function showBody() {
-  document.body.className += ' showBody';
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+    document.body.className += ' showBody'; 
+  }, 750);
+  
 }
 
 /**
@@ -119,7 +136,7 @@ function addBecomeMember() {
   const contributionInformation = document.querySelector(".ContributionInformation");
   const becomeMember = `
   <div class="becomeMember">
-    <img src="${window.become_member_url}" border="0" alt="" title="" />
+    <img src="${window.become_member_url}" border="0" alt="" title="" decoding="async" loading="lazy" />
     <div class="becomeMember-content">
       <h2>Become a member!</h2>
       <p>With a one-time contribution of $35 or more, members receive an Equality Florda Membership Card and enamel pin.</p>
@@ -227,7 +244,9 @@ function takeActionScroll() {
 
 function nextButton() {
   const nextButton = document.querySelector(".nextStep");
-  nextButton.innerHTML = 'Continue';
+  if (nextButton) {
+    nextButton.innerHTML = 'Continue';    
+  }
 }
 
 
