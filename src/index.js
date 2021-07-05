@@ -3,14 +3,9 @@ import scss from "./sass/main.scss";
 
 window.nvtag_callbacks = window.nvtag_callbacks || {};
 var nvtag_callbacks = window.nvtag_callbacks;
-/*
-nvtag_callbacks.alterFormDefinition = nvtag_callbacks.alterFormDefinition || [];
-nvtag_callbacks.alterFormDefinition.push(function(args) {
-  return args;
-});
-*/
 nvtag_callbacks.postRender = nvtag_callbacks.postRender || [];
 nvtag_callbacks.postRender.push(function(args) {
+  setDefaultConfig();
   displayAccordion();
   mobileImage();
   bgImage();
@@ -39,6 +34,15 @@ nvtag_callbacks.postRender.push(function(args) {
   observer.observe(target, config);
 
 });
+
+function setDefaultConfig() {
+  if(!window.hasOwnProperty('become_member_url')) {
+    window.become_member_url = 'https://nvlupin.blob.core.windows.net/images/van/AV/AVEA/1/16307/images/4Site/imgs/img-memberCard.jpg';
+  }
+  if(!window.hasOwnProperty('main_image_url')) {
+    window.main_image_url = 'https://nvlupin.blob.core.windows.net/images/van/AV/AVEA/1/16307/images/4Site/imgs/bg.ba7e8cc0703082ae16a3988384bfd1a2.jpg';
+  }
+}
 
 function mobileImage() {
   let img = document.querySelector('.responsive-hero img');
@@ -81,6 +85,8 @@ function displayAccordion() {
 function bgImage() {
   if (window.main_image_url) {
     const bgImage = document.querySelector(".bg-image");
+    if(!bgImage) return;
+
     const mainImage = window.main_image_url;
     bgImage.style.cssText = `background: url('${mainImage}'); background-repeat: no-repeat; background-size: cover; background-position: center center;`
   }
@@ -205,6 +211,7 @@ function checkboxRadiobutton() {
 function isViewport() {
 
   const takeAction = document.querySelector('.take-action');
+  if (!takeAction) return;
 
   if (takeAction.innerHTML.trim() !== '') {
     const target = document.querySelector('.ContributionInformation .radios');
@@ -230,6 +237,7 @@ function isViewport() {
 
 function takeActionScroll() {
   const takeAction = document.querySelector('.take-action');
+  if (!takeAction) return;
 
   if (takeAction.innerHTML.trim() !== '') {
     takeAction.addEventListener('click', function (e) {
@@ -244,18 +252,20 @@ function takeActionScroll() {
 
 function nextButton() {
   const nextButton = document.querySelector(".nextStep");
-  if (nextButton) {
-    nextButton.innerHTML = 'Continue';    
-  }
+  if (!nextButton) return;
+
+  nextButton.innerHTML = 'Continue';    
 }
 
 
 function photoCredit() {
   const bgImage = document.querySelector(".bg-image");
   const responsiveHero = document.querySelector(".responsive-hero");
+
+  if (!responsiveHero || !responsiveHeroImage || !bgImage) return;
+
   const responsiveHeroImage = responsiveHero.querySelector("img");
-  
-  if (responsiveHeroImage.hasAttribute("title")) {
+  if (responsiveHeroImage && responsiveHeroImage.hasAttribute("title")) {
     const photoAttribute = responsiveHeroImage.getAttribute("title");
     bgImage.insertAdjacentHTML('beforeend', `<div class="photoCredit">${photoAttribute}</div>`);
     responsiveHero.insertAdjacentHTML('beforeend', `<div class="photoCredit">${photoAttribute}</div>`);
