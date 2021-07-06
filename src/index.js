@@ -11,7 +11,7 @@ nvtag_callbacks.postRender.push(function(args) {
   bgImage();
   moveRadiosElements();
   isViewport();
-  addBecomeMember();
+  insertPremiums();
   checkboxRadiobutton();
   takeActionScroll();
   selectAmount();
@@ -133,24 +133,36 @@ function handleClick(e) {
   }
 }
 
-/**
- * Add become member element to form
- */
-//  const contributionInformation = document.querySelector(".ContributionInformation");
 
-function addBecomeMember() {
-  const contributionInformation = document.querySelector(".ContributionInformation");
-  const becomeMember = `
-  <div class="becomeMember">
-    <img src="${window.become_member_url}" border="0" alt="" title="" decoding="async" loading="lazy" />
-    <div class="becomeMember-content">
-      <h2>Become a member!</h2>
-      <p>With a one-time contribution of $35 or more, members receive an Equality Florda Membership Card and enamel pin.</p>
-    </div>
-  </div>
-  `;
-  contributionInformation.insertAdjacentHTML('beforeend', becomeMember);
+/**
+ * Insert the premiums into the form
+ */
+function insertPremiums() {
+  if(fs_theme_options && fs_theme_options.premiums && fs_theme_options.premiums.length) {
+    const contributionInformation = document.querySelector(".ContributionInformation");
+    if(contributionInformation) {
+      fs_theme_options.premiums.forEach(function(premium, index) {
+        if(premium.color && premium.body && premium.title) {
+          const imageMarkup = (premium.image_url) ? `
+              <div class="premium-image">
+                <img src="${premium.image_url}" border="0" alt="" title="" decoding="async" loading="lazy" />
+              </div>` : ``;
+          const premiumMarkup = `
+            <div class="premium color-${premium.color}">
+              ${imageMarkup}
+              <div class="premium-content">
+                <h2>${premium.title}</h2>
+                <p>${premium.body}</p>
+              </div>
+            </div>
+          `; 
+          contributionInformation.insertAdjacentHTML('beforeend', premiumMarkup);
+        }
+      });
+    }
+  }
 }
+
 
 /**
  * Move elements from selected frequency radios
