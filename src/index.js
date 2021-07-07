@@ -5,7 +5,6 @@ window.nvtag_callbacks = window.nvtag_callbacks || {};
 var nvtag_callbacks = window.nvtag_callbacks;
 nvtag_callbacks.postRender = nvtag_callbacks.postRender || [];
 nvtag_callbacks.postRender.push(function(args) {
-  setDefaultConfig();
   displayAccordion();
   mobileImage();
   bgImage();
@@ -17,7 +16,6 @@ nvtag_callbacks.postRender.push(function(args) {
   selectAmount();
   nextButton();
   photoCredit();
-
   showBody();
 
   const target = document.querySelector(".form-item-selectamount");
@@ -34,15 +32,6 @@ nvtag_callbacks.postRender.push(function(args) {
   observer.observe(target, config);
 
 });
-
-function setDefaultConfig() {
-  if(!window.hasOwnProperty('become_member_url')) {
-    window.become_member_url = 'https://nvlupin.blob.core.windows.net/images/van/AV/AVEA/1/16307/images/4Site/imgs/img-memberCard.jpg';
-  }
-  if(!window.hasOwnProperty('main_image_url')) {
-    window.main_image_url = 'https://nvlupin.blob.core.windows.net/images/van/AV/AVEA/1/16307/images/4Site/imgs/bg.ba7e8cc0703082ae16a3988384bfd1a2.jpg';
-  }
-}
 
 function mobileImage() {
   let img = document.querySelector('.responsive-hero img');
@@ -83,12 +72,13 @@ function displayAccordion() {
  * Background Image
  */
 function bgImage() {
-  if (window.main_image_url) {
+  if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty('main_image_url') && fs_theme_options.main_image_url) {
     const bgImage = document.querySelector(".bg-image");
     if(!bgImage) return;
 
-    const mainImage = window.main_image_url;
+    const mainImage = fs_theme_options.main_image_url;
     bgImage.style.cssText = `background: url('${mainImage}'); background-repeat: no-repeat; background-size: cover; background-position: center center;`
+
   }
 }
 
