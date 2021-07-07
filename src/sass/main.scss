@@ -1,6 +1,8 @@
 body:not(.showBody){
-  background-color: #E0F4F5 !important;
-  opacity: 0 !important;
+  .eqfl-container {
+    background-color: #E0F4F5 !important;
+    opacity: 0 !important;
+  }
 }
 
 @import "normalize";
@@ -17,9 +19,11 @@ body {
 }
 
 body.showBody {
-  background-color: #FFFFFF;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  .eqfl-container {
+    background-color: #FFFFFF;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;  
+  }
 }
 
 img {
@@ -54,7 +58,7 @@ header.at-title {
   display: none;
 }
 
-.container {
+.eqfl-container {
   display: flex;
 }
 
@@ -101,7 +105,7 @@ header.at-title {
   }
 }
 
-.footer {
+.eqfl-footer {
   background-color: #F0F1F2;
   width: 100%;
   max-width: 635px;

@@ -138,7 +138,8 @@ function handleClick(e) {
  * Insert the premiums into the form
  */
 function insertPremiums() {
-  if(fs_theme_options && fs_theme_options.premiums && fs_theme_options.premiums.length) {
+  if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty('premiums') && Array.isArray(fs_theme_options.premiums)) {
+
     const contributionInformation = document.querySelector(".ContributionInformation");
     if(contributionInformation) {
       fs_theme_options.premiums.forEach(function(premium, index) {
