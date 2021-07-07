@@ -446,6 +446,10 @@ fieldset {
   padding: 0 !important;
 }
 
+.at .at-radio-set-buttons .at-btn-radio-wrapper label.at-btn-radio.large {
+  min-width: unset !important;
+}
+
 // Fieldset .ContributionInformation
 @import "_contributionInformation";
 
