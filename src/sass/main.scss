@@ -355,17 +355,19 @@ h1 {
   min-width: 0 !important;
 }
 
-.at-credit-card-button-wrapper .at-btn-radio {
-  background: #EE2B77 !important;
-  padding: 16px 74px !important;
-  border-radius: 8px !important;
-  text-align: center !important;
-  color: #FFFFFF !important;
-  font-size: 24px !important;
-  font-family: "kiro", sans-serif !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-  border: 0 !important;
+.at-credit-card-button-wrapper, .at-eft-button-wrapper {
+   .at-btn-radio {
+    background: #EE2B77 !important;
+    padding: 16px 74px !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    color: #FFFFFF !important;
+    font-size: 24px !important;
+    font-family: "kiro", sans-serif !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    border: 0 !important;
+  }
 }
 
 .step-prevNext {
