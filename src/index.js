@@ -16,6 +16,8 @@ nvtag_callbacks.postRender.push(function(args) {
   selectAmount();
   nextButton();
   photoCredit();
+  setFrequencyListeners();
+  updatePaymentMethods();
   showBody();
 
   const target = document.querySelector(".form-item-selectamount");
@@ -32,6 +34,27 @@ nvtag_callbacks.postRender.push(function(args) {
   observer.observe(target, config);
 
 });
+
+function setFrequencyListeners() {
+  var frequencies = document.querySelectorAll('input[name="SelectedFrequency"]');
+  for(var i = 0; i < frequencies.length; i++) {
+    frequencies[i].addEventListener('change', function() {
+      updatePaymentMethods();
+    });
+  }
+}
+
+function updatePaymentMethods() {
+  var eft_field = document.querySelector('.at-eft-button-wrapper');
+  if(eft_field) {
+    var selected_frequency = document.querySelector('input[name="SelectedFrequency"]:checked');
+    if(selected_frequency.value === '0') { // give once
+      eft_field.style.display = 'none';
+    } else {
+      eft_field.style.display = 'flex';
+    }
+  }
+}
 
 function mobileImage() {
   let img = document.querySelector('.responsive-hero img');
