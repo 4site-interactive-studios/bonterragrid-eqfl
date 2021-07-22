@@ -17,6 +17,7 @@ nvtag_callbacks.postRender.push(function(args) {
   nextButton();
   photoCredit();
   setFrequencyListeners();
+  setEFTMessage();
   updatePaymentMethods();
   showBody();
 
@@ -34,6 +35,25 @@ nvtag_callbacks.postRender.push(function(args) {
   observer.observe(target, config);
 
 });
+
+function getThemeOption(option) {
+  if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty(option)) {
+    return fs_theme_options[option];
+  }
+  return null;
+}
+
+function setEFTMessage() {
+  const message = getThemeOption('eft_message');
+  if(message) {    
+    const eftButtonWrapper = document.querySelector(".at-eft-button-wrapper label");
+    if(eftButtonWrapper) {
+      document.body.className += ' has-eft-message'; 
+      const messageMarkup = `<div class="eft-message">${message}</div>`; 
+      eftButtonWrapper.insertAdjacentHTML('afterend', messageMarkup);
+    }
+  }
+}
 
 function setFrequencyListeners() {
   var frequencies = document.querySelectorAll('input[name="SelectedFrequency"]');
@@ -95,13 +115,11 @@ function displayAccordion() {
  * Background Image
  */
 function bgImage() {
-  if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty('main_image_url') && fs_theme_options.main_image_url) {
+  const mainImage = getThemeOption('main_image_url');
+  if(mainImage) {
     const bgImage = document.querySelector(".bg-image");
     if(!bgImage) return;
-
-    const mainImage = fs_theme_options.main_image_url;
     bgImage.style.cssText = `background: url('${mainImage}'); background-repeat: no-repeat; background-size: cover; background-position: center center;`
-
   }
 }
 
@@ -151,11 +169,11 @@ function handleClick(e) {
  * Insert the premiums into the form
  */
 function insertPremiums() {
-  if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty('premiums') && Array.isArray(fs_theme_options.premiums)) {
-
+  const premiums = getThemeOption('premiums');
+  if(Array.isArray(premiums)) {
     const contributionInformation = document.querySelector(".ContributionInformation");
     if(contributionInformation) {
-      fs_theme_options.premiums.forEach(function(premium, index) {
+      premiums.forEach(function(premium, index) {
         if(premium.color && premium.body && premium.title) {
           const imageMarkup = (premium.image_url) ? `
               <div class="premium-image">

@@ -1,12 +1,9 @@
 .PaymentMethodSection {
-  // display: flex;
-
   .at-radio-set-buttons input[type="radio"] {
     display: none;
   }
 
   .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-
     display: flex;
     text-align: center;
     font-size: 24px;
@@ -18,7 +15,25 @@
       border-radius: 8px;
       width: 100%;
     }
-
   }
 
+  .eft-message {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Alkes", serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 36px;
+    color: #00A3AB;
+    margin-bottom: 20px !important;
+  }
+
+  .at-eft-button-wrapper {
+    display: block !important;
+  }
+}
+
+.has-eft-message .at-eft-button-wrapper label {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px;
 }
