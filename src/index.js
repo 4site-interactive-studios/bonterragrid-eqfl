@@ -71,7 +71,7 @@ function updatePaymentMethods() {
     if(selected_frequency.value === '0') { // give once
       eft_field.style.display = 'none';
     } else {
-      eft_field.style.display = 'flex';
+      eft_field.style.display = 'block';
     }
   }
 }
