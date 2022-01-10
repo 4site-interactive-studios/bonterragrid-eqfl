@@ -134,9 +134,8 @@ function selectAmount() {
     labelOtheramount.addEventListener('focus', handleClick);
 
     labelAmount.forEach((label, index) => {
-      if (index === 0) {
+      if(label.querySelector('input[type="radio"]:checked')) {
         label.classList.add("active");
-        label.querySelector('input[type="radio"]').checked = true;
         labelOtheramount.removeAttribute('required');
         labelOtheramount.value = '';
       }
