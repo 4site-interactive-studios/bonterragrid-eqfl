@@ -19,6 +19,7 @@ nvtag_callbacks.postRender.push(function(args) {
   setFrequencyListeners();
   setEFTMessage();
   updatePaymentMethods();
+  addCheckboxToFastActionUpdate();
   showBody();
 
   const target = document.querySelector(".form-item-selectamount");
@@ -36,6 +37,13 @@ nvtag_callbacks.postRender.push(function(args) {
     observer.observe(target, config);
   }
 });
+
+function addCheckboxToFastActionUpdate() {
+  const checkmark = document.createElement('div');
+  checkmark.classList.add('checkmark');
+  const label = document.querySelector('.UpdateMyProfile .updateMyProfileSection label');
+  label.appendChild(checkmark);
+}
 
 function getThemeOption(option) {
   if(typeof fs_theme_options !== 'undefined' && fs_theme_options.hasOwnProperty(option)) {

@@ -1,10 +1,3 @@
-body:not(.showBody){
-  .eqfl-container {
-    background-color: #E0F4F5 !important;
-    opacity: 0 !important;
-  }
-}
-
 @import "normalize";
 @import "fonts";
 @import url("https://use.typekit.net/fyc7sqc.css");
@@ -16,14 +9,6 @@ body {
   width: 100%;
   font-family: 'caldinaregular', sans-serif;
   font-size: 16px;
-}
-
-body.showBody {
-  .eqfl-container {
-    background-color: #FFFFFF;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;  
-  }
 }
 
 img {
@@ -91,6 +76,8 @@ header.at-title {
 
 .eqfl-content {
   padding: 20px 10px;
+  position: relative;
+
   @media (min-width: 382px) {
     padding: 20px;
   }
@@ -104,11 +91,84 @@ header.at-title {
   p {
     margin: 16px 4px;
   }
+
+  .form-container {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}
+
+.updateMyProfileSection {
+  label {
+    display: block !important;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #FFFFFF;
+    border: 1px solid #D6D8DC;
+    border-radius: 6px;
+
+    &:after {
+      content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.6485 2.11306L5.31801 8.63755C4.84923 9.12082 4.08879 9.12082 3.61956 8.63755L0.351719 5.26908C-0.11724 4.78581 -0.11724 4.00193 0.351719 3.51856C0.820766 3.03511 1.58114 3.03511 2.04998 3.51838L4.46904 6.01177L9.94997 0.362453C10.419 -0.121001 11.1795 -0.120635 11.6483 0.362453C12.1172 0.845816 12.1172 1.62943 11.6485 2.11306Z' fill='white'/></svg>");
+      position: absolute;
+      top: 0px;
+      left: 4px;
+      display: none;
+      width: 12px;
+      height: 9px;
+    }
+  }
+  input:checked ~ .checkmark {
+    background-color: #00A3AB;
+    border: 1px solid #00A3AB;
+  }
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+
+.loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  background-color: white;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s z-index 1s;
+
+  .inner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
+
+    img {
+      height: 60px;
+      width: auto;
+    }
+  }
+}
+
+.showBody .loader {
+  opacity: 0;
+  z-index: -1;
+}
+.showBody .form-container {
+  opacity: 1;
 }
 
 .eqfl-footer {
   background-color: #F0F1F2;
   width: 100%;
+  position: relative;
   //max-width: 635px;
   padding: 42px 70px;
   box-sizing: border-box;
@@ -470,6 +530,10 @@ fieldset {
   }
 }
 
+.ContactInformation .at-fields .at-row input[type="tel"] {
+  padding: 14px 20px 14px 45px;
+}
+
 .multistep-layout .HeaderHtml {
   padding: 0 !important;
 }
@@ -505,5 +569,3 @@ fieldset {
 
 // Buttons Colors
 @import "_buttonsColors";
-
-
