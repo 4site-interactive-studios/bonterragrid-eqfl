@@ -88,7 +88,7 @@ function updatePaymentMethods() {
 function showBody() {
   setTimeout(function() {
     window.scrollTo(0, 0);
-    document.body.className += ' showBody'; 
+    document.body.className += ' showBody';
   }, 750);
 }
 
@@ -166,11 +166,12 @@ function generateAttribution(attribution_content) {
   return null;
 }
 function bgImage() {
-  const mainImage = getThemeOption('main_image_url');
+  const mainImage = getThemeOption('main_image_url');  
   if(mainImage) {
     const bgImage = document.querySelector(".bg-image");
     if(!bgImage) return;
-    bgImage.style.cssText = `background: url('${mainImage}'); background-repeat: no-repeat; background-size: cover; background-position: center center;`;
+    const bgFocus = getThemeOption('main_image_focus');
+    bgImage.style.cssText = `background: url('${mainImage}'); background-repeat: no-repeat; background-size: cover; background-position: ${bgFocus}; background-color: #f7f7f7;`;
 
     const attribution = generateAttribution(getThemeOption('main_image_attribution'));
     if(attribution) {

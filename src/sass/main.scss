@@ -1,6 +1,5 @@
 @import "normalize";
 @import "fonts";
-@import url("https://use.typekit.net/fyc7sqc.css");
 
 html, 
 body {
@@ -65,6 +64,8 @@ header.at-title {
   z-index: 50;
   //max-width: 640px;
   background-color: #FFFFFF;
+  max-width: 100%;
+  position: relative;
 
   @media (min-width: 941px) {
     background-image: url("data:image/svg+xml;charset=UTF-8, <svg width='5' height='762' viewBox='0 0 5 762' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -257.058 303.476)' fill='white'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -287.804 336.15)' fill='%232DC3E9'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -318.548 368.824)' fill='%236A3A10'/><rect width='44.8646' height='528.317' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -349.293 401.498)' fill='%23402611'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -226.312 270.802)' fill='%23F490B3'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -195.567 238.129)' fill='%23EE2B77'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -164.823 205.455)' fill='%23F99D25'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -134.078 172.782)' fill='%23FFD200'/><path d='M-103.333 140.108L-72.5879 107.434L257.702 458.443L226.957 491.116L-103.333 140.108Z' fill='%2388C540'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -72.5869 107.434)' fill='%2300A3AB'/><rect width='44.8646' height='481.974' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -41.8428 74.7606)' fill='%230072BC'/><rect width='44.8646' height='517.725' transform='matrix(0.685287 -0.728273 0.685287 0.728273 -35.5967 16.0507)' fill='%23643695'/></svg>");
@@ -77,6 +78,8 @@ header.at-title {
 .eqfl-content {
   padding: 20px 10px;
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
 
   @media (min-width: 382px) {
     padding: 20px;
@@ -90,11 +93,6 @@ header.at-title {
 
   p {
     margin: 16px 4px;
-  }
-
-  .form-container {
-    opacity: 0;
-    transition: opacity 1s;
   }
 }
 
@@ -131,43 +129,9 @@ header.at-title {
   }
 }
 
-
-.loader {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  right: 0;
-  background-color: white;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 1s z-index 1s;
-
-  .inner-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 30vh;
-
-    img {
-      height: 60px;
-      width: auto;
-    }
-  }
-}
-
-.showBody .loader {
-  opacity: 0;
-  z-index: -1;
-}
-.showBody .form-container {
-  opacity: 1;
-}
-
 .eqfl-footer {
   background-color: #F0F1F2;
-  width: 100%;
+  width: calc(100% - 5px);
   position: relative;
   //max-width: 635px;
   padding: 42px 70px;
@@ -177,6 +141,32 @@ header.at-title {
   img {
     width: 422px;
   }
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;  
+  img {
+    margin-top: 200px;
+  }
+  @media (min-width: 941px) {
+    width: calc(100% - 5px);
+  }
+}
+
+body.showBody {
+  .loader {
+    display: none;
+  }
+  .eqfl-content .form-container {
+    opacity: 1;
+  }
+
 }
 
 // Hide the neverbounce feedback field
@@ -444,7 +434,7 @@ h1 {
 .at-credit-card-button-wrapper, .at-eft-button-wrapper {
    .at-btn-radio {
     background: #EE2B77 !important;
-    padding: 16px 74px !important;
+    padding: 16px 68px !important;
     border-radius: 8px !important;
     text-align: center !important;
     color: #FFFFFF !important;
@@ -478,7 +468,7 @@ h1 {
 
 .at .btn-at-primary {
   background: #EE2B77 !important;
-  padding: 16px 74px !important;
+  padding: 16px 68px !important;
   border-radius: 8px !important;
   text-align: center !important;
   color: #FFFFFF !important;
@@ -530,13 +520,44 @@ fieldset {
   }
 }
 
-.ContactInformation .at-fields .at-row input[type="tel"] {
+.ContactInformation .at-fields .at-row input[name="MobilePhone"] {
   padding: 14px 20px 14px 45px;
 }
 
 .multistep-layout .HeaderHtml {
-  padding: 0 !important;
+  padding: 10px 0 0 0 !important;
 }
+
+
+
+.at .at-radio-set-buttons .at-btn-radio-wrapper {
+  margin: 0;  
+}
+
+.at .PaymentMethodSection .at-radio-set-buttons {
+  margin: 0;
+
+  .at-btn-radio-wrapper label.at-btn-radio.large {
+    min-width: unset;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .at .at-radio-set-buttons {
+      flex-direction: column-reverse;
+  }  
+  .at .at-radio-set-buttons label.at-btn-radio {
+      width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .at-form-submit .btn-at-primary {
+    padding: 16px 48px 16px 24px !important;
+  }
+}
+
+
+
 
 // Override of existing CSS from Every Action
 @media screen and (min-width: 40em) {
@@ -544,9 +565,45 @@ fieldset {
     flex-basis: 100%;
   }
 }
-
+.fastaction-block .fastAction {
+  padding: 0;
+}
+.form-item-selectedfrequency .radios label{
+    padding: 1rem 0.5rem !important;
+}
+.form-item-selectedfrequency .at input[type="radio"]+label{
+    margin: 0 !important;
+}
+.at-credit-card-button-wrapper .at-btn-radio,
+.at-eft-button-wrapper .at-btn-radio{
+    padding: 16px 1ch !important;
+}
+label {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
 .at-row.at-row-full.EnableTributeGift {
   padding-left: 0.4rem;
+}
+.PaymentInformation .at-row {
+  #bankAccountType,
+  .routing-number-label,
+  .account-number-label,
+  .confirm-account-number-label {
+    width: 100% !important;
+  }  
+}
+.at .at-payment-method-buttons .at-radio-set-buttons label.at-btn-radio {
+    width: 100%;
+}
+
+.at .authorize-payment-label input[type="checkbox"]+span {
+  padding-left: 0;
 }
 
 // Fieldset .ContributionInformation
