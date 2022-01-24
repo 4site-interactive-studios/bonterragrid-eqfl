@@ -88,7 +88,7 @@ function updatePaymentMethods() {
 function showBody() {
   setTimeout(function() {
     window.scrollTo(0, 0);
-    document.body.className += ' showBody';
+    document.body.className += ' showFormContainer';
   }, 750);
 }
 
