@@ -66,12 +66,10 @@ fieldset.ContributionInformation {
   }
 
   input#id-0:checked ~ .radios__indicator {
-    background: #00A3AB;
     transform: translate3d(4px,0,0);
   }
 
   input#id-1:checked ~ .radios__indicator {
-    background: #00A3AB;
     transform: translate3d(calc(100% - 4px),0,0);
   }
 
@@ -81,15 +79,6 @@ fieldset.ContributionInformation {
       display: none;
     }
   }
-
-  input#id-1:checked ~ .at-radio-label-0 {
-    color: #FFFFFF !important;
-  }
-
-  input#id-0:checked ~ .at-radio-label-4 {
-    color: #FFFFFF !important;
-  }
-
 }
 
 .radio-description {

@@ -123,7 +123,7 @@ function generateAccordion(title_content, body_content) {
 
   const body = document.createElement('div');
   body.classList.add('panel');
-  body.innerHTML = body_content;
+  body.innerHTML = body_content.replace('[link=', '<a href="').replace('[/link]', '</a>').replace(']', '">');
   accordion.appendChild(body);
 
   return accordion;

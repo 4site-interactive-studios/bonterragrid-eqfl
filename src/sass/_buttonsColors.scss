@@ -15,20 +15,8 @@
         input:checked+label {
           color: #ffffff !important;
         }
-        input#id-0:checked ~ .at-radio-label-4 {
-          color: $color_code !important;
-        }
-        input#id-0:checked ~ .radios__indicator {
-          background: $color_code;
-        }
-        input#id-1:checked ~ .radios__indicator {
-          background: $color_code;
-        }
       }
     }
-
-
-
 
     .form-item-selectamount {
       .at-radios {
