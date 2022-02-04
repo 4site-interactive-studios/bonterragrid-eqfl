@@ -1,387 +1,91 @@
-.button-pink {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #EE2B77 !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #EE2B77 !important;
-    }
-  }
-  .take-action {
-    background: #EE2B77 !important;
-  }
-  input[type="submit"] {
-    background: #EE2B77 !important;  
-  }
+@mixin button-color($name, $color_code, $svg_fill) {
+  .button-#{$name} {
+    .form-item-selectedfrequency {
+      .radios {
+        background: rgba($color_code, 0.15);
+        color: $color_code;
 
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #EE2B77;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #EE2B77;
-    border-color: #EE2B77;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #EE2B77;
-  }
-  .radio-description::before {
-    color: #EE2B77;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%23EE2B77'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(238, 43, 119, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
+        input:checked ~ .radios__indicator {
+          background: $color_code;
+          color: #ffffff;
+        }
+        input+label {
+          color: $color_code !important;
+        }
+        input:checked+label {
+          color: #ffffff !important;
+        }
+        input#id-0:checked ~ .at-radio-label-4 {
+          color: $color_code !important;
+        }
+        input#id-0:checked ~ .radios__indicator {
+          background: $color_code;
+        }
+        input#id-1:checked ~ .radios__indicator {
+          background: $color_code;
+        }
+      }
+    }
+
+
+
+
+    .form-item-selectamount {
+      .at-radios {
+        .label-amount {
+          color: $color_code;
+
+          & input[type="radio"]:checked+a,
+          &:hover>a {
+            background-color: $color_code;
+            border-color: $color_code;
+          }
+          &:hover, &.active {
+            color: white;
+          }
+        }
+        .label-otheramount.active input[type="number"] {
+          background-color: $color_code;
+          border-color: $color_code;        
+        }
+      }
+    }
+    .updateMyProfileSection input:checked ~ .checkmark,
+    .at-check input:checked ~ .checkmark {
+      background-color: $color_code;
+      border-color: $color_code;
+    }
+    .radio-description {
+      color: $color_code;
+      &::before {
+        color: $color_code;
+        content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%23#{$svg_fill}'/></svg>");
+      }
+    }
+    .at-credit-card-button-wrapper,.at-eft-button-wrapper {
+      .at-btn-radio {
+        background: $color_code !important;
+      }
+    }
+    .prevNext {
+      .submitStep, .nextStep {
+        background: $color_code !important;
+      }
+    }
+    .take-action {
+      background: $color_code !important;
+    }
+    input[type="submit"] {
+      background: $color_code !important;  
+    }
   }
 }
 
-.button-teal {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #00A3AB !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #00A3AB !important;
-    }
-  }
-  .take-action {
-    background: #00A3AB !important;
-  }
-  input[type="submit"] {
-    background: #00A3AB !important;  
-  }
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #00A3AB;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #00A3AB;
-    border-color: #00A3AB;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #00A3AB;
-  }
-  .radio-description::before {
-    color: #00A3AB;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%2300A3AB'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(0, 163, 171, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-black {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #002634 !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #002634 !important;
-    }
-  }
-  .take-action {
-    background: #002634 !important;
-  }
-  input[type="submit"] {
-    background: #002634 !important;  
-  }
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #000000;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #000000;
-    border-color: #000000;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #000000;
-  }
-  .radio-description::before {
-    color: #000000;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%23000000'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(0, 0, 0, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-blue {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #0072BC !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #0072BC !important;
-    }
-  }
-  .take-action {
-    background: #0072BC !important;
-  }
-  input[type="submit"] {
-    background: #0072BC !important;  
-  }
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #0072BC;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #0072BC;
-    border-color: #0072BC;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #0072BC;
-  }
-  .radio-description::before {
-    color: #0072BC;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%230072BC'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(0, 114, 188, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-purple {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #643695 !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #643695 !important;
-    }
-  }
-  .take-action {
-    background: #643695 !important;
-  }
-  input[type="submit"] {
-    background: #643695 !important;  
-  }
-
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #643695;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #643695;
-    border-color: #643695;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #643695;
-  }
-  .radio-description::before {
-    color: #643695;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%23643695'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(100, 54, 149, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-ltgray {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #8D939E !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #8D939E !important;
-    }
-  }
-  .take-action {
-    background: #8D939E !important;
-  }
-  input[type="submit"] {
-    background: #8D939E !important;  
-  }
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #8D939E;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #8D939E;
-    border-color: #8D939E;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #8D939E;
-  }
-  .radio-description::before {
-    color: #8D939E;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%238D939E'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(141, 147, 158, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-dkgray {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #555F6B !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #555F6B !important;
-    }
-  }
-  .take-action {
-    background: #555F6B !important;
-  }
-  input[type="submit"] {
-    background: #555F6B !important;  
-  }
-
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #555F6B;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #555F6B;
-    border-color: #555F6B;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #555F6B;
-  }
-  .radio-description::before {
-    color: #555F6B;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%23555F6B'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(85, 95, 107, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
-
-.button-brown {
-  .at-credit-card-button-wrapper,.at-eft-button-wrapper {
-    .at-btn-radio {
-      background: #6A3A10 !important;
-    }
-  }
-  .prevNext {
-    .submitStep, .nextStep {
-      background: #6A3A10 !important;
-    }
-  }
-  .take-action {
-    background: #6A3A10 !important;
-  }
-
-  input[type="submit"] {
-    background: #6A3A10 !important;  
-  }
-
-
-  .form-item-selectedfrequency .radios, 
-  .form-item-selectamount .at-radios .label-amount,
-  .radio-description {
-    color: #6A3A10;
-  }
-  .form-item-selectamount .at-radios .label-amount input[type="radio"]:checked+a,
-  .form-item-selectamount .at-radios .label-amount:hover>a,
-  .form-item-selectamount .at-radios .label-otheramount.active input[type="number"],
-  .updateMyProfileSection input:checked ~ .checkmark,
-  .at-check input:checked ~ .checkmark {
-    background-color: #6A3A10;
-    border-color: #6A3A10;
-  }
-  .form-item-selectedfrequency .radios input#id-0:checked ~ .radios__indicator,
-  .form-item-selectedfrequency .radios input#id-1:checked ~ .radios__indicator {
-    background: #6A3A10;
-  }
-  .radio-description::before {
-    color: #6A3A10;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='12' height='30' viewBox='0 0 12 30' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.2 5.9038C1.86724 8.53428 0.444421 11.9797 0.444421 15.761C0.444422 21.789 4.04311 26.9766 9.22659 29.357C10.1163 29.7655 11.123 29.2508 11.4325 28.322C11.7453 27.3834 11.2249 26.3814 10.3426 25.9339C6.60875 24.0396 4.05558 20.1991 4.05558 15.761C4.05558 12.9661 5.09558 10.4285 6.77833 8.4485L10.2966 11.9306C10.928 12.5556 12 12.1083 12 11.2199L12 0.750003L1.42953 0.750004C0.536472 0.750004 0.0912864 1.8316 0.725585 2.46026L4.2 5.9038Z' fill='%236A3A10'/></svg>");
-  }
-  .form-item-selectedfrequency .radios {
-    background: rgba(106, 58, 16, 0.15);
-  }
-  .form-item-selectamount .at-radios .label-amount.active,
-  .form-item-selectamount .at-radios .label-amount:hover {
-    color: white;
-  }
-}
+@include button-color("teal", $teal, '00A3AB');
+@include button-color("pink", $pink, 'EE2B77');
+@include button-color("black", $black, '002634');
+@include button-color("blue", $blue, '0072BC');
+@include button-color("purple", $purple, '643695');
+@include button-color("ltgray", $ltgray, '8D939E');
+@include button-color("dkgray", $dkgray, '555F6B');
+@include button-color("brown", $brown, '6A3A10');
